@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDoList</title>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <link href="./css/cover.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">ToDoList</h3>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <h1 class="cover-heading">Lets add some item.</h1>
+            <form action="/newtodo" class="col-6 mx-auto" method="POST">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="item" placeholder="Enter todo item"><span><button
+                            type="submit" class="btn btn-primary">Add</button></span>
+                </div>
+            </form>
+        </main>
+
+        <div class="row">
+            <ul class="col-6 mx-auto">
+              <%  for(var i=0; i < todoList.length ;i++) { %>
+                   <li> <%= todoList[i] %></li>
+              <%  } %>
+            </ul>
+        </div>
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a
+                        href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
